@@ -3,45 +3,43 @@
 \begin{resumo}[Abstract]
 \begin{otherlanguage*}{english}
 
-Adult neurogenesis in the hippocampal dentate gyrus (DG) is implicated in diverse memory functions, ranging from encoding and
-consolidation to forgetting. Despite extensive experimental evidence on its macro-level effects, the computational mechanisms by
-which immature granule cells (iGCs) generated through adult neurogenesis modulate the hippocampal circuit remain poorly
-understood. Studies on the topic often focus on local DG effects, neglecting the impact on downstream regions such as Cornu
-Ammonis 3 (CA3), and treat iGCs as a static population, a simplification that fails to capture the dynamics of their maturation.
-This project proposes the development of a DG-CA3 computational model based on experimental data to investigate these questions.
-To this end, the Brian2 simulator will be employed, using Izhikevich neurons and synapses endowed with both short-term plasticity
-and spike-timing-dependent long-term plasticity. The study will analyze how iGCs, during their peak excitability phase and after
-their maturation into mature granule cells (mGCs), influence not only pattern separation in the DG, but also the autoassociation
-and pattern completion functions of CA3. The model will simulate the temporal maturation of iGCs and the continuous addition of
-new neurons, as well as incorporate CA3-to-DG feedback projections, thereby aiming for a deeper understanding of the mechanisms by
-which neurogenesis modulates hippocampal circuit dynamics. It is expected that the DG will exhibit a mixed coding scheme, with mGCs
-specializing in pattern separation and iGCs in integration. It is also hypothesized that the high excitability of iGCs will, on
-one hand, impair CA3 pattern completion via non-selective assembly activation and, on the other hand, enable the temporal
-integration of information across their maturation, thus modulating memory consolidation.
+The dentate gyrus (DG) transforms similar inputs into more distinct representations, a computation termed pattern
+separation, and is one of the few brain regions that generate new neurons throughout adulthood. These adult-born granule cells
+(GCs) pass through an immature, highly excitable stage, and activating them \textit{in vivo} recruits inhibitory interneurons and
+increases population sparsity across both the DG and CA3 (Cornu Ammonis area 3). Whether this circuit-wide effect follows from the
+known DG-CA3 microcircuitry has not been examined in a biophysically detailed model, and existing models of neurogenesis and
+pattern separation are confined to the DG\@. Here, a spiking model of the DG-CA3 network was built from the Hippocampome.org
+knowledge base and extended with a population of immature GCs (iGCs). Pattern separation and population sparsity were measured
+while the level of neurogenesis and iGC excitability was varied, and the iGCs were then activated directly. Neurogenesis enhanced
+pattern separation in the mature GCs (mGCs) and pushed CA3 in the same direction, mainly by making population activity sparser;
+direct activation of the iGCs recruited inhibitory interneurons throughout the DG and CA3 and increased population sparsity,
+reproducing the effect observed \textit{in vivo}. The sparsifying influence of adult neurogenesis can therefore emerge from the
+known DG-CA3 circuitry and reaches beyond the DG, consistent with a modulatory rather than an encoding role for iGCs.
 
-\noindent \textbf{Keywords}: Adult neurogenesis, hippocampus, computational model, plasticity, dentate gyrus, CA3.
+\noindent \textbf{Keywords}: Adult neurogenesis, pattern separation, dentate gyrus, CA3, spiking neural network, sparsity.
 \end{otherlanguage*}
 \end{resumo}
 
-\begin{resumo}
+\begin{resumo}[Resumo]
+\begin{otherlanguage*}{brazil}
 
-A neurogênese adulta no giro denteado (DG) do hipocampo está implicada em diversas funções da memória, desde a codificação e
-consolidação até o esquecimento. Apesar das evidências experimentais sobre seus efeitos macro, os mecanismos computacionais pelos
-quais as células granulares imaturas (iGCs) geradas pela neurogênese adulta modulam o circuito hipocampal permanecem pouco
-compreendidos. Estudos sobre o tema frequentemente se concentram nos efeitos locais no DG, negligenciando o impacto em áreas
-subsequentes como o Cornu Ammonis 3 (CA3), e tratam as iGCs como uma população estática, uma simplificação que não captura a
-dinâmica de sua maturação. Este projeto propõe o desenvolvimento de um modelo computacional do circuito DG-CA3 baseado em dados
-experimentais para investigar essas questões. Para isso, será utilizado o simulador Brian2, com neurônios Izhikevich, sinapses com
-plasticidade de curto prazo e de longo prazo dependente do tempo de disparo. O trabalho analisará como as iGCs, durante sua fase
-de maior excitabilidade e após sua maturação em células maduras (mGCs), influenciam não apenas a separação de padrões do DG, mas
-também as funções de autoassociação e completamento de padrões do CA3. O modelo simulará a maturação temporal das iGCs e a adição
-contínua de novos neurônios, além de incorporar as retroprojeções do CA3 para o DG, buscando assim uma compreensão mais
-aprofundada dos mecanismos pelos quais a neurogênese modula a dinâmica do circuito hipocampal. Espera-se que o DG apresente uma
-codificação mista, onde mGCs se especializam na separação de padrões e iGCs na integração. Acredita-se, também, que a alta
-excitabilidade das iGCs, por um lado, prejudique o completamento de padrões no CA3 através da ativação promíscua de assembleias e,
-por outro, possibilite a integração temporal de informações ao longo de sua maturação, modulando a consolidação de memórias.
+O giro denteado (DG) é responsável pela separação de padrões, função computacional que transforma padrões de entrada similares em
+representações neurais mais distintas, e é também uma das únicas áreas do encéfalo de mamíferos que gera novos neurônios ao longo
+de toda a vida adulta. As células granulares (GCs) geradas por essa neurogênese passam por uma fase imatura de alta
+excitabilidade, e ativá-las \textit{in vivo} recruta interneurônios inibitórios e aumenta a esparsidade da atividade tanto no DG
+quanto no Cornu Ammonis 3 (CA3). Ainda não foi investigado, no entanto, se esse efeito sobre o circuito decorre do microcircuito
+já conhecido do DG-CA3, visto que os modelos computacionais existentes de neurogênese e separação de padrões se restringem ao
+DG\@. Neste trabalho, construiu-se um modelo computacional da rede DG-CA3 a partir da base de conhecimento Hippocampome.org,
+estendido com uma população de GCs imaturas (iGCs). A separação de padrões e a esparsidade foram medidas variando-se o nível de
+neurogênese e a excitabilidade das iGCs, que em seguida foram ativadas diretamente. A neurogênese aumentou a capacidade de
+separação de padrões das GCs maduras (mGCs) e levou o CA3 no mesmo sentido, principalmente por tornar a atividade populacional
+mais esparsa; já a ativação direta das iGCs recrutou interneurônios inibitórios por todo o DG e o CA3, aumentando a esparsidade e
+reproduzindo o efeito observado \textit{in vivo}. Conclui-se que a influência da neurogênese adulta sobre a esparsidade pode
+emergir apenas desse microcircuito e que ela alcança regiões além do próprio DG, corroborando a visão das iGCs como moduladoras da
+atividade do circuito, ao invés de codificadoras de informação.
 
-\noindent\textbf{Palavras-chave}: Neurogênese adulta, hipocampo, modelo computacional, plasticidade, giro denteado, CA3.
+\noindent\textbf{Palavras-chave}: Neurogênese adulta, separação de padrões, giro denteado, CA3, rede neural pulsada, esparsidade.
+\end{otherlanguage*}
 \end{resumo}
 
 
