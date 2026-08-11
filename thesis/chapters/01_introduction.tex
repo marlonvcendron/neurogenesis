@@ -1,4 +1,4 @@
-\chapter{Introduction}
+\chapter{Introduction}\label{cap:introduction}
 
 To the hippocampus is attributed a fundamental role in the encoding, consolidation, and recall of declarative
 memories~\parencite{eichenbaumHippocampus1999, liaoLearning2024}. To this end, the hippocampus receives afferent inputs from multiple
@@ -75,14 +75,6 @@ could both regulate DG activity, increasing the sparsity of activation by inhibi
 activity~\parencite{aimoneComputational2016, berdugo-vegaSharpening2023, folszAdultborn2023}, rather than being directly recruited
 in memory encoding as mGCs are.
 
-Consistent with the latter, \textcite{mchughAdultborn2022} showed \textit{in vivo} that immature adult-born GCs carry little
-spatial information, especially when compared to mGCs; this study also showed that briefly activating those iGCs recruits
-inhibitory interneurons throughout the hippocampus and increases population sparsity in both the DG and CA3, pointing to a
-circuit-level mechanism by which a small population of new cells could regulate activity well beyond the DG\@. Similarly,
-\textcite{koSystems2025} showed that adult neurogenesis drives the reorganization of hippocampal engram circuitry as memories are
-consolidated, remodeling the DG-CA3-CA1 network so that its representations generalize over time. These results show that iGCs
-have important effects across the hippocampus network, not being restricted to a local function in the DG only.
-
 Given the difficulty of experimentation in the DG and the complexity of information processed in the hippocampus, computational
 models have been invaluable for understanding the role of neurogenesis~\parencite{aimoneComputational2016}. Computational models
 vary in scale, biological plausibility, the circuits modeled, and various other factors; therefore, a range of different results
@@ -90,31 +82,7 @@ exists regarding the function and mechanisms of neurogenesis~\parencite{aimoneCo
 Existing models of neurogenesis and pattern separation, however, are confined entirely to the DG~\parencite{chavlisDendrites2017,
 kimEffect2024, yangDynamic2025}, and so cannot investigate the influence of iGCs into CA3 and CA1.
 
-In a conductance-based DG model~\parencite{kimEffect2024}, the large population of mGCs performed excellent pattern separation, while
-the minority of iGCs served as pattern integrators. The presence of iGCs deteriorated the DG's pattern separation capacity
-compared to a DG composed solely of mGCs; however, the authors postulate that this mixed coding of pattern integration and
-separation could increase the capacity for memory storage and retrieval, a hypothesis they were unable to test since only the DG
-was modeled, without CA1 or CA3. Interestingly, these results contradict experimental studies demonstrating that an increase in
-neurogenesis enhances pattern separation~\parencite{sahayIncreasing2011}, which may indicate that computational models of the
-hippocampus have not yet fully captured the computations it performs.
-
-In contrast, the work of~\textcite{yangDynamic2025} employed a DG model to investigate the dynamic impact of neurogenesis on
-pattern separation. Their results indicate that the general effect of iGCs on GCs is inhibitory, which increases network
-sparsity and consequently improves pattern separation, providing computational evidence for the ``indirect coding'' hypothesis.
-The authors also investigated how iGC characteristics during maturation, such as decreasing activity and increasing synaptic
-plasticity, dynamically affect pattern separation. The study further suggests that the presence of iGCs increases the
-adaptability of the DG network to different input frequencies, improving the robustness of pattern separation.
-
-The model of~\textcite{aimoneComputational2009} was implemented at an intermediate level of biological
-plausibility\footnote{This model is considered to be at an intermediate level of biological plausibility because it does not
-model the electrical dynamics of individual neurons through conductance-based models, as in this project, but instead uses a
-digitized spike-rate model with a time step of \SI{25}{\milli\second}.}, which allowed for the investigation of iGCs throughout
-their entire maturation over time. By modeling the maturation timeline of this iGC population, the model showed that iGCs
-preferentially encoded information received when they were young, thus exhibiting the role of temporal integrators. This model
-was corroborated by experimental studies~\parencite{berdugo-vegaSharpening2023}, but did not analyze the implications for other
-areas such as CA1 and CA3, modeling only the DG\@.
-
-This work investigates whether the circuit-wide sparsification observed \textit{in vivo} emerges from the known DG-CA3
+This work investigates whether the circuit-wide sparsification observed \textit{in vivo}~\parencite{mchughAdultborn2022} emerges from the known DG-CA3
 microcircuitry, using a biophysically detailed spiking model of the DG-CA3 network that includes a population of iGCs. Pattern
 separation and population sparsity were measured while the level of adult neurogenesis was varied, and the iGCs were then
 activated directly to probe their effect on the rest of the circuit. Neurogenesis enhanced pattern separation in the mGCs and

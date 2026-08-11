@@ -1,3 +1,45 @@
-\chapter{Conclusion}
+\chapter{Conclusion}\label{cap:conclusion}
 
-Conclusion
+This work set out to test whether the circuit-wide sparsification that follows the activation of adult-born granule cells
+\textit{in vivo}~\parencite{mchughAdultborn2022} can be accounted for by the DG-CA3 microcircuitry as it is currently
+characterized. The question was posed because the existing computational literature on neurogenesis and pattern separation stops
+at the DG~\parencite{chavlisDendrites2017, kimEffect2024, yangDynamic2025}, and so could not address effects reported downstream,
+and because the candidate circuit mechanisms proposed for adult-born cells cannot be distinguished from one another in a model
+that excludes CA3~\parencite{aimoneComputational2016}.
+
+To address it, a spiking model of the DG-CA3 network was assembled from the Hippocampome.org knowledge
+base~\parencite{wheelerHippocampomeorg2023} and extended with a population of iGCs whose parameters were fitted to published
+electrophysiological recordings~\parencite{espositoNeuronal2005}. Two experiments were then run on it. In the first, the level of
+neurogenesis and the excitability of the iGCs were varied while pattern separation and population sparsity were measured in the DG
+and in CA3. In the second, the iGCs were activated directly and the response of every population was recorded, as in the
+\textit{in vivo} experiment that motivated the work.
+
+Three findings follow. The mGC population became sparser and separated its inputs better as neurogenesis and iGC excitability
+increased, while the iGCs themselves never separated their own inputs and acted instead as integrators, so that the granule cell
+population considered as a whole moved in the opposite direction to its mature component. The pCA3 population followed the mGCs
+rather than the iGCs, becoming both sparser and more separating, although it continued to converge its inputs overall, as is
+expected of a region organized for autoassociation. Directly activating the iGCs recruited inhibitory interneurons in both the DG
+and CA3 and raised population sparsity, reproducing the effect observed \textit{in vivo}. Decomposing the gain in mGC separation
+showed that most of it came from the reduction in the number of active cells rather than from a change in how correlated their
+outputs were, which identifies sparsification as the mechanism responsible rather than orthogonalization.
+
+These results speak to the question of what adult-born granule cells are for. They are consistent with the view of the iGCs as
+transient modulators of the surrounding circuit rather than as encoders in their own right~\parencite{folszAdultborn2023,
+mchughAdultborn2022}, and they attribute the effect to the circuitry rather than to plasticity, since the model reproduces it with
+synapses that never change. They also show that the effect is not confined to the region in which the new cells sit: a population
+of only 5\% of the granule cells was enough to carry both the sparsification and the improvement in separation into CA3.
+
+The conclusions are limited by the simplifications set out in Chapter~\ref{cap:discussion}. Neurons are reduced to single
+compartments, so the dendritic processing known to control GC sparsity is absent~\parencite{chavlisDendrites2017}; the interneuron
+repertoire comprises two types in the DG and one in CA3, against the much larger diversity described
+anatomically~\parencite{degroInterneuron2022}; and the iGCs are represented as a single static population, so the sweep over their
+excitability samples the maturation range rather than following cells through it. The most important of these is the absence of
+synaptic plasticity, which is what prevents the model from addressing storage and recall in the recurrent CA3 network and
+therefore leaves the influence of adult-born cells on CA3 engrams open~\parencite{koSystems2025, kopsickFormation2024}.
+Introducing plasticity, adding more interneuron types, and letting the iGC population mature over time are the natural next steps
+for this work.
+
+A population of iGCs making up 5\% of the GCs was enough to sparsen the mGC code, raise its pattern separation, and carry both
+effects into the CA3, while separating none of its own inputs. Regulation of coding sparsity across both regions therefore rests
+on the DG-CA3 microcircuitry alone, without synaptic plasticity, with the iGCs acting as modulators of activity rather than as
+encoders.
