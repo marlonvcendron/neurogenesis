@@ -1,30 +1,32 @@
-\documentclass[12pt, openright, oneside, a4paper, brazil, english]{abntex2}
+\documentclass[12pt, openright, oneside, a4paper, brazil, english, sumario=tradicional]{abntex2}
 
-\usepackage[style=apa,backend=biber,backref=true]{biblatex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+\usepackage[style=apa,backend=biber]{biblatex}
 \addbibresource{references.bib}
 \AtEveryBibitem{\clearfield{annotation}}
 \usepackage[table]{xcolor}
-\usepackage{lipsum} 
-\usepackage[T1]{fontenc}	
-\usepackage[utf8]{inputenc}	
-\usepackage{ctable}             
+\usepackage{lipsum}
+\usepackage{ctable}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{float}              
-\usepackage{longtable}          
-\usepackage{xcolor,colortbl}    
-\usepackage{booktabs}           
-\usepackage{graphicx}			
-\usepackage{subfig}             
-\usepackage{caption}            
-\usepackage{epstopdf}           
-\usepackage{amsmath}            
-\usepackage{nomencl} 
-\usepackage{cleveref}  
-\usepackage{indentfirst}		
-\usepackage{color}				
-\usepackage{microtype} 			
-\usepackage{lastpage}			
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{xcolor,colortbl}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{nomencl}
+\usepackage{cleveref}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{microtype}
+\usepackage{lastpage}
 \usepackage{siunitx}
 \usepackage{newtxtext,newtxmath}
 \usepackage{array}
@@ -41,19 +43,36 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \definecolor{cor}{RGB}{0,0,0}
-\hypersetup{
-	pdftitle={\@title}, 
-	pdfauthor={\@author},
-	pdfsubject={\imprimirpreambulo},
-	pdfcreator={LaTeX},
-	pdfkeywords={Cognitive Neuroscience}{Behavior}{PPGNEC-UFPB}, 
-	colorlinks=true, 
-	linkcolor=cor,     
-	citecolor=cor,     
-	filecolor=cor,  
-	urlcolor=cor
+
+\setlrmarginsandblock{2.54cm}{2.54cm}{*}
+\setulmarginsandblock{2.54cm}{2.54cm}{*}
+\checkandfixthelayout
+
+\DoubleSpacing
+
+\newcommand\parindentABNT{%
+	\setlength{\parindent}{1.27cm}\setlength{\parskip}{0pt}%
 }
-\makeatother
+
+\renewcommand{\ABNTEXchapterfont}{\normalfont\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfont}{\normalfont\bfseries}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont\bfseries\itshape}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\bfseries}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\bfseries\itshape}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+\chapterstyle{abnt}
+\renewcommand{\printchaptertitle}[1]{\chaptitlefont\centering #1}
+\setlength{\afterchapskip}{\baselineskip}
+
+\makeoddhead{abntheadings}{}{}{\thepage}
+\makeevenhead{abntheadings}{}{}{\thepage}
+\makeheadrule{abntheadings}{\textwidth}{0pt}
+\makeoddfoot{abntheadings}{}{}{}
+\makeevenfoot{abntheadings}{}{}{}
 
 \local{João Pessoa - PB}
 \data{\the\year}
@@ -66,9 +85,25 @@
 	in the month of \mesDefesa.
 }
 
-\newcommand\parindentABNT{
-	\setlength{\parindent}{1.25cm} \setlength{\parskip}{0.1cm} 
+\hypersetup{%
+	pdfcreator={LaTeX},
+	pdfkeywords={adult neurogenesis, pattern separation, dentate gyrus, CA3, spiking neural network, sparsity},
+	colorlinks=true,
+	linkcolor=cor,
+	citecolor=cor,
+	filecolor=cor,
+	urlcolor=cor
 }
+
+\makeatletter
+\AtBeginDocument{%
+	\hypersetup{%
+		pdftitle={\@title},
+		pdfauthor={\@author},
+		pdfsubject={\Curso}%
+	}%
+}
+\makeatother
 
 \AtBeginDocument{\selectlanguage{english}}
 

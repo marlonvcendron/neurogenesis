@@ -3,7 +3,7 @@
 \newcommand\Universidade{Federal University of Paraíba}
 \newcommand\Departamento{Center for Humanities, Letters and Arts}
 \newcommand\Curso{Graduate Program in Cognitive and Behavioral Neuroscience}
-\titulo{Impact of adult neurogenesis in the dentate gyrus on CA3 memory functions: a computational model of its temporal dynamics}
+\titulo{Adult neurogenesis promotes pattern separation and sparsity beyond the dentate gyrus in a spiking DG--CA3 model}
 \autor{Marlon Valmórbida Cendron}
 \orientador{Flávio Freitas Barbosa}
 \coorientador{Wilfredo Blanco Figuerola}
@@ -21,20 +21,16 @@
 % Gostaria de agradecer \lipsum[1-4]
 % \end{agradecimentos}
 
-\input{chapters/abstract}
-
 \pdfbookmark[0]{\contentsname}{toc}
 \tableofcontents*
 \cleardoublepage
 
 \phantomsection
-\pdfbookmark[0]{\listtablename}{lot}
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables*
 \cleardoublepage
 
 \phantomsection
-\pdfbookmark[0]{\listfigurename}{lof}
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures*
 \cleardoublepage
@@ -59,6 +55,8 @@
 \end{siglas}
 \cleardoublepage
 
+\input{chapters/abstract}
+
 \textual
 
 \input{chapters/01_introduction}
@@ -72,7 +70,7 @@
 
 \postextual
 
-\printbibliography
+\printbibliography[title={References}]
 
 \input{chapters/appendix}
 
