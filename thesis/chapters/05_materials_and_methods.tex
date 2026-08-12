@@ -15,8 +15,8 @@ hippocampal formation~\parencite{wheelerHippocampomeorg2023}.
         network input is composed of cells from the entorhinal cortex (EC). The dentate gyrus (DG) has the perforant path and the
         dendrites of its cells in the molecular layer; the granular layer is composed of immature and mature Granule Cells (iGCs
         and mGCs, respectively) and Basket Cells (BCs); the hilus is composed of Mossy Cells (MCs) and Hilar Perforant
-        Path-associated cells (HIPP). The CA3 is composed of the pyramidal cells, labelled \textbf{P}, and the inhibitory
-        interneurons, labelled \textbf{I}, referred to in the text as pCA3 and iCA3, respectively. The CA1 box marks the efferent
+        Path-associated cells (HIPP). The CA3 is composed of the pyramidal cells, labeled \textbf{P}, and the inhibitory
+        interneurons, labeled \textbf{I}, referred to in the text as pCA3 and iCA3, respectively. The CA1 box marks the efferent
         target of the pCA3 cells and is not part of the model.}
 
         \includegraphics[width=\textwidth]{figures/arquitetura-rede.pdf}%
@@ -70,7 +70,7 @@ connection probability between the EC and mGCs, and also receive reduced inhibit
 (Table~\ref{tab:synapse_params}). Additionally, some iGCs are known to also directly inhibit mGCs~\parencite{lunaAdultborn2019}, so
 the model includes an inhibitory synapse from iGCs onto mGCs. The MC$\to$iGC projection is left unscaled, since MC axons terminate
 on the proximal dendrites in the inner molecular layer while the EC afferents terminate
-distally~\parencite{amaralDentate2007}, and the dendrites of an adult-born GC extend outwards as it
+distally~\parencite{amaralDentate2007}, and the dendrites of an adult-born GC extend outward as it
 matures~\parencite{zhaoDistinct2006}, reaching the MC input before the EC one. Because
 Hippocampome.org~\parencite{wheelerHippocampomeorg2023} does not characterize iGCs, six of the nine iGC parameters were fitted to
 electrophysiological data reported by~\textcite{espositoNeuronal2005}. Parameter fitting was performed using the

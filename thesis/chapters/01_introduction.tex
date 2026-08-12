@@ -56,18 +56,16 @@ discriminative function.
 
 In general, adult neurogenesis is implicated in all phases of memory, including encoding, consolidation, recall, and even
 forgetting~\parencite{chavanMemory2025}\@. iGCs play a crucial role in novelty detection and pattern separation, enabling the
-discrimination between similar memories. Furthermore, recent evidence suggests a specialized role for these neurons in memory
-consolidation during REM sleep~\parencite{chavanMemory2025} and in the consolidation process that generalizes memories, being
-essential for structural changes in CA3 circuits through the non-selective activation of neural assemblies via their high
-excitability~\parencite{koSystems2025}.
+discrimination between similar memories~\parencite{nakashibaYoung2012, mchughAdultborn2022}. Furthermore, recent evidence suggests
+a specialized role for these neurons in memory consolidation during REM sleep~\parencite{chavanMemory2025} and in the
+consolidation process that generalizes memories, being essential for structural changes in CA3 circuits through the non-selective
+activation of neural assemblies via their high excitability~\parencite{koSystems2025}.
 
 Despite numerous studies demonstrating the role of adult neurogenesis in different hippocampal
-functions~\parencite{chavanMemory2025, berdugo-vegaSharpening2023}, the computational mechanisms at the circuit level through which
-iGCs perform these functions remain poorly understood.
-
-This central question unfolds into two main theoretical lines regarding the function of
-iGCs~\parencite{berdugo-vegaSharpening2023}. The first hypothesis is that iGCs participate directly in memory encoding,
-integrating directly into long-term memory engrams and fulfilling a role similar to mGCs, but with their own
+functions~\parencite{chavanMemory2025, berdugo-vegaSharpening2023}, the computational mechanisms at the circuit level through
+which iGCs perform these functions remain poorly understood. This central question unfolds into two main theoretical lines
+regarding the function of iGCs~\parencite{berdugo-vegaSharpening2023}. The first hypothesis is that iGCs participate directly in
+memory encoding, integrating directly into long-term memory engrams and fulfilling a role similar to mGCs, but with their own
 peculiarities~\parencite{piattiNeurogenesis2013}. In this scenario, they would act in the encoding of new information, in pattern
 integration, or in the prevention of catastrophic interference with memories already established by mGCs. The second hypothesis,
 which has been explored more recently, proposes that iGCs function as temporary circuit-modulating elements. In this role, they
@@ -89,61 +87,3 @@ activated directly to probe their effect on the rest of the circuit. Neurogenesi
 pushed CA3 in the same direction, mainly by making the population activity sparser. Directly activating the iGCs recruited
 inhibitory interneurons throughout the DG and CA3 and increased population sparsity. Together, these results support the view of
 iGCs as modulators that regulate activity across the hippocampal network rather than as encoders confined to the DG\@.
-
-
-% TODO: remove
-% \section{Justification}
-
-% Although numerous works have attempted to define a function for neurogenesis, the role played by the immature cells it generates
-% within the circuit they integrate into, as well as what occurs to that circuit during their maturation, remains poorly
-% understood~\parencite{aimoneComputational2016, aimoneModeling2011, berdugo-vegaSharpening2023, faresNeurogenesis2019}.
-
-% A number of studies on this topic have focused primarily on the effects of neurogenesis in the DG itself and on the pattern
-% separation it performs~\parencite{berdugo-vegaSharpening2023, kimAdult2024, wangEffect2024}, neglecting its impact on connected
-% regions such as the CA3 area. This project therefore aims to fill this gap by also examining how iGCs affect the memory
-% functions of the CA3 area (autoassociation and pattern completion), and how the feedback projections from this area to the DG
-% influence the system~\parencite{myersPattern2011}, with the goal of producing a more holistic and biologically plausible model.
-
-% It is also common for a number of works to study the function of a static iGC population~\parencite{aimoneComputational2016,
-% berdugo-vegaSharpening2023}, with models that account for the maturation of these cells over time and the replacement of mGCs
-% being very rare~\parencite{aimoneComputational2009}. Such studies can explain the function (or lack thereof) of these immature cells
-% only while they remain immature, but are unable to explain how this phase impacts these cells as they mature.
-
-% This study is therefore justified by its innovative approach, filling gaps in the existing literature by simulating the
-% maturation of iGCs and its consequences in CA3.
-
-
-% TODO: sei lá
-% \chapter{Objectives}
-
-% \section{General objective}
-
-% To analyze the impacts of adult neurogenesis on the capacity for autoassociation and pattern completion and separation in the
-% DG-CA3 circuit in a computational model based on experimental data.
-
-% \section{Specific objectives}
-
-% \begin{itemize}
-%     \item To analyze the effects of adult neurogenesis on DG pattern separation under different conditions of input pattern
-%     similarity.
-%     \item To consider the effects of incomplete iGC circuit integration, simulating different levels of connectivity.
-%     \item To analyze the effects of iGC circuit integration on CA3 autoassociation and pattern completion, as well as their role
-%     in neural assembly activation.
-%     \item To simulate the maturation of GCs generated by adult neurogenesis over time.
-% \end{itemize}
-
-% TODO: remove
-% \chapter{Hypotheses}
-
-% Based on preliminary results and the literature, the central hypothesis of this work is that the computational model will reveal
-% a functional dichotomy between Granule Cell populations. It is expected that mGCs will behave as pattern separators, increasing
-% the dissimilarity between the neural representations of distinct stimuli. In contrast, iGCs, by virtue of their greater
-% intrinsic excitability, are predicted to function as pattern integrators, with their non-selective activation decreasing the
-% distinction between output patterns and, consequently, degrading the overall pattern separation capacity of the DG.
-
-% Additionally, it is hypothesized that this indiscriminate activation of iGCs will negatively impact CA3 memory functions,
-% impairing the fidelity of pattern completion by co-activating neural assemblies unrelated to the input stimulus. Although iGC
-% activity may suppress that of mGCs through shared inhibitory circuits, it is expected that this suppression will marginally
-% increase mGC sparsity, slightly improving their separation capacity. Finally, the model will test the hypothesis that iGCs act
-% as temporal integrators, with their maturation specializing them to respond to information encoded during their immature phase,
-% establishing a mechanism for the separation of memories in time.

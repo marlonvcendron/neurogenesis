@@ -2,6 +2,8 @@
 
 \section{The dentate gyrus and pattern separation}
 
+% TODO: insert figure
+
 Two properties are usually thought to underlie pattern separation in the DG\@: the expansion of a relatively small entorhinal
 population onto a much larger number of GCs, and the competitive network dynamics that keep only a few of those GCs active at any
 one time~\parencite{hainmuellerDentate2020}. The sparseness of GC activity has been confirmed by recordings from identified cells:
@@ -23,7 +25,7 @@ independence~\parencite{sloviterUpdating2012}, although the interlamellar connec
 hypothesis assumed~\parencite{pakHippocampal2022}. The second is the mossy cell population of the hilus, which receives excitation
 from the GCs and projects back to GCs and to hilar interneurons, so that its net effect on the GC population is
 inhibitory~\parencite{scharfmanHilar2013}. Mossy cells contribute to pattern separation in their own
-right~\parencite{goodsmithDentate2019}, and modelling work attributes that contribution specifically to the indirect feedback
+right~\parencite{goodsmithDentate2019}, and modeling work attributes that contribution specifically to the indirect feedback
 inhibition they recruit~\parencite{galloniRecurrent2022}.
 
 It should be noted that the strongest form of the pattern separation hypothesis is not fully supported by recent recordings. In
@@ -36,7 +38,7 @@ context~\parencite{kesnerAnalysis2018}.
 \section{CA3: autoassociation and pattern completion}
 
 The recurrent collaterals of CA3 give the region attractor dynamics: an input resembling a stored pattern drives the network
-towards the stored state, which is the mechanism usually invoked to explain pattern completion~\parencite{rollsMechanisms2013,
+toward the stored state, which is the mechanism usually invoked to explain pattern completion~\parencite{rollsMechanisms2013,
 rollsStorage2018, miglioreCA32019}. The same dynamics can also push CA3 into a different attractor when its inputs are
 sufficiently distinct from one another, so the output of the region is not simply a smoothed version of its
 input~\parencite{hainmuellerDentate2020}.
@@ -52,6 +54,10 @@ CA3 is not the end of the circuit as far as the DG is concerned. A portion of th
 backprojection that contributes to pattern separation in the DG itself~\parencite{myersPattern2011}. Recent anatomical work
 continues to refine the picture: connectivity between pCA3 cells is organized by cell subtype rather than at
 random~\parencite{sammonsSubtype2025}.
+
+The DG and CA3 therefore operate as a single loop rather than as two stages in sequence, so that whatever alters the sparseness of
+the GC code is felt in CA3 and returns to the DG through the backprojection. The population that performs the DG computation is
+not fixed either, since a fraction of it is replaced throughout life, which is the subject of the next section.
 
 \section{Adult hippocampal neurogenesis}
 
@@ -69,11 +75,14 @@ removal of mostly perinatally generated mGCs, the total number of GCs stays appr
 The cells that do survive are stably maintained and eventually become indistinguishable from developmentally born
 GCs~\parencite{denoth-lippunerFormation2021, folszAdultborn2023}.
 
-Maturing cells extend their dendrites outwards through the molecular layer and send an axon towards
+Maturing cells extend their dendrites outward through the molecular layer and send an axon toward
 CA3~\parencite{zhaoDistinct2006}, and their electrophysiological properties change in step, recapitulating aspects of embryonic
-development~\parencite{espositoNeuronal2005}. During the critical window described in Chapter~\ref{cap:introduction} they are more
-excitable than mGCs and also more plastic, showing a lower threshold for the induction of long-term potentiation and a larger
-potentiation amplitude~\parencite{aimoneRegulation2014, folszAdultborn2023}. The boundaries of this window, however, are not
+development~\parencite{espositoNeuronal2005}. Roughly four to seven weeks after birth the cells pass through a critical window in
+which they are already wired into the circuit, receiving afferent input and projecting to CA3, but have not yet acquired the
+properties of a mature cell. Within that window they are more excitable than mGCs and also more plastic, showing a lower threshold
+for the induction of long-term potentiation and a larger potentiation amplitude~\parencite{aimoneRegulation2014,
+folszAdultborn2023}. It is this combination, an integrated cell that still fires more readily than its neighbors, that makes the
+window the period of interest for the circuit-level questions treated here. The boundaries of this window, however, are not
 settled: birthdating studies combined with immediate-early gene expression report that adult-born cells can remain comparatively
 excitable for several months, which challenges the view that their contribution is confined to their first few
 weeks~\parencite{folszAdultborn2023}.
@@ -83,7 +92,7 @@ weeks~\parencite{folszAdultborn2023}.
 The two views of what adult-born cells do, set out in Chapter~\ref{cap:introduction}, differ in whether the cells are treated as
 part of the code or as something acting on it. The encoding view is supported by the observation that hyperexcitable DG cells are
 preferentially recruited into engrams, so that cells in the critical window are more readily incorporated into any memory trace
-than their mature neighbours, and by reports that they are activated during both encoding and
+than their mature neighbors, and by reports that they are activated during both encoding and
 retrieval~\parencite{piattiNeurogenesis2013, folszAdultborn2023}. The modulatory view rests instead on what these cells do to the
 rest of the circuit, and it is the one for which circuit-level evidence has accumulated most
 recently~\parencite{aimoneComputational2016, mchughAdultborn2022, folszAdultborn2023}.
@@ -104,15 +113,16 @@ perforant-path evoked responses in the DG were reduced, but spontaneous gamma-fr
 in amplitude and dentate firing became more tightly synchronized to them, which led the authors to conclude that young neurons
 normally inhibit or destabilize recurrent activity in the DG and hilus~\parencite{lacefieldEffects2012}.
 
-The third is inhibition reaching beyond the DG\@. Adult-born cells engage hippocampal interneurons that inhibit neighbouring mGCs
+The third is inhibition reaching beyond the DG\@. Adult-born cells engage hippocampal interneurons that inhibit neighboring mGCs
 and also exert inhibition on CA3 and CA1, with the reported consequence being an overall sparsification of population firing
 across the hippocampus~\parencite{folszAdultborn2023, mchughAdultborn2022}. The clearest evidence that the effect crosses regions
 is that suppressing adult neurogenesis, either chemically or genetically, impairs the population-based coding of similar contexts
-in \textit{CA3} while leaving the coding of dissimilar contexts intact~\parencite{niiboriSuppression2012}. That the deficit
-appears downstream of the DG, and only for similar contexts, is the observation this work sets out to explain mechanistically.
+in CA3 while leaving the coding of dissimilar contexts intact~\parencite{niiboriSuppression2012}. The deficit therefore appears
+downstream of the region in which the new cells are, and only for the inputs that are hardest to tell apart. Accounting for both
+features in terms of the circuit is the problem this work addresses.
 
-The behavioural evidence is broadly consistent with a role in discrimination but is not uniform. Increasing neurogenesis is
-sufficient to improve behavioural pattern separation~\parencite{sahayIncreasing2011}, and cells in the critical window are
+The behavioral evidence is broadly consistent with a role in discrimination but is not uniform. Increasing neurogenesis is
+sufficient to improve behavioral pattern separation~\parencite{sahayIncreasing2011}, and cells in the critical window are
 required for tasks that demand the separation of highly similar contexts while appearing dispensable for learning a single
 location in the water maze~\parencite{folszAdultborn2023}.
 
@@ -123,7 +133,7 @@ activity was selective for a single context when the exposures to the two contex
 selectivity attenuating as the exposures were brought closer together and attenuating further when neurogenesis was reduced, which
 the authors interpret as a temporally orthogonalizing code in the DG~\parencite{rangelTemporally2014}. Support for the idea is
 nonetheless mixed, since little overlap has been found between the adult-born cells active during encoding and during retrieval of
-contextual fear memories, which has been taken to suggest that these cells respond to behavioural state rather than to particular
+contextual fear memories, which has been taken to suggest that these cells respond to behavioral state rather than to particular
 events~\parencite{folszAdultborn2023}. Beyond encoding, adult-born cells have been implicated in later stages of memory
 processing, including consolidation during sleep, and in the gradual degradation of old connections that promotes generalization
 and eventually forgetting~\parencite{chavanMemory2025, folszAdultborn2023}.
@@ -169,7 +179,7 @@ consolidated source of neuron and synapse parameters, which is the role played b
 Hippocampome.org~\parencite{wheelerHippocampomeorg2023}. The second is computational: simulating large spiking networks on
 general-purpose hardware has known limits~\parencite{zenkeLimits2014}, which is one reason models are built at reduced scale and
 with efficient simulators~\parencite{stimbergBrian2019a}. It is also worth noting an anatomical fact that constrains any DG-CA3
-model: the mossy fibre forms giant multisynapse terminals on its CA3 targets, yet each fibre contacts only on the order of a dozen
+model: the mossy fiber forms giant multisynapse terminals on its CA3 targets, yet each fiber contacts only on the order of a dozen
 pyramidal cells, making it one of the sparsest connections in the brain, and its strength is offset by the heavy tonic inhibition
 the GCs receive~\parencite{aimoneComputational2016}.
 
@@ -179,7 +189,7 @@ Computational work on DG neurogenesis has been organized at three scales, namely
 and the hippocampus as a loop, and the questions asked differ at each~\parencite{aimoneComputational2016, aimoneModeling2011}. At
 the level of the single cell, the excitability of the immature neuron has been attributed to a weaker and even depolarizing
 response to GABA in the first weeks, to a distinct complement of ion channels giving a higher input resistance, and to the reduced
-synaptic input the cell receives; modelling indicates that the reduced input alone is sufficient to bias an immature GC towards
+synaptic input the cell receives; modeling indicates that the reduced input alone is sufficient to bias an immature GC toward
 firing more often than a mature one~\parencite{aimoneComputational2016}. That last point matters for the present work, because
 reduced afferent input is the mechanism by which immaturity is represented in the model described in Chapter~\ref{cap:methods}.
 
@@ -193,13 +203,13 @@ simulation~\parencite{aimoneComputational2016}.
 
 A more recent theoretical treatment attributes the functional switch to the GABAergic input onto the maturing cell. While that
 input is depolarizing, cooperativity drives synaptic growth so that the newborn cell becomes responsive to stimuli resembling
-those that already activate mature cells; once the input becomes inhibitory, competition pushes its synaptic configuration towards
+those that already activate mature cells; once the input becomes inhibitory, competition pushes its synaptic configuration toward
 stimuli unlike those already stored. The model thereby accounts both for how adult-born cells integrate into an existing network
 and for why they promote the separation of similar but not of distinct patterns~\parencite{gozelFunctional2021}, which is the same
 asymmetry found experimentally in CA3~\parencite{niiboriSuppression2012}.
 
 Reviews of this literature have noted that models agree that neurogenesis and pattern separation are related but disagree about
-what is being separated, and that several distinct circuit mechanisms could produce the same behavioural
+what is being separated, and that several distinct circuit mechanisms could produce the same behavioral
 outcome~\parencite{aimoneComputational2016, wangEffect2024}. Three candidates have been set out explicitly. The first is a
 population effect, in which the new cells themselves represent new information and their distinct connections to CA3 reduce
 interference between memories. The second is that new cells restrain activity in the surrounding DG, making the activity of the

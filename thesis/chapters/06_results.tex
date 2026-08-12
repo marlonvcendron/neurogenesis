@@ -2,14 +2,14 @@
 
 \section{Baseline network activity}\label{sec:res_baseline}
 
-Before the effects of neurogenesis were analysed, it was first verified that the network settles into a stable and biologically
+Before the effects of neurogenesis were analyzed, it was first verified that the network settles into a stable and biologically
 plausible behavior. Figure~\ref{fig:results-1}a shows the spiking activity of the EC, iGC, mGC and pCA3 populations during a
 representative simulation. Driven by the EC input, the mGCs fire sparsely and in short, synchronized bouts, with only a small
 fraction of the population active at any moment. The iGCs are more active, while the pCA3 cells fire at a moderate rate, spread
 more evenly across the population.
 
 This difference between the two populations can be seen in Figure~\ref{fig:results-1}b: the iGC firing-rate distribution is
-shifted towards higher rates than that of the mGCs, with a median firing rate of \SI{3}{\hertz} against \SI{1}{\hertz} for the
+shifted toward higher rates than that of the mGCs, with a median firing rate of \SI{3}{\hertz} against \SI{1}{\hertz} for the
 mGCs. These values closely match those found \textit{in vivo} by~\textcite{mchughAdultborn2022} (\SI{2.3}{\hertz} for adult-born
 against \SI{1.0}{\hertz} for mGCs), although the shape of the distribution differs. For every cell type, the model's firing rates
 and population sparsity fell within the ranges compiled from the literature (Table~\ref{tab:firing_rates}), which is taken as
@@ -68,7 +68,7 @@ not turn the CA3 into a separator, but pushes it toward separation.
         In every panel the horizontal axis is the EC$\to$iGC excitability level (10--100\%), each point is the mean over the 30
         pattern sets, shaded bands show the SEM and the dashed black line marks the control network without neurogenesis.
         \textbf{(a)} Mean population activation of DG GCs\@. \textbf{(b)} Pattern separation degree $\mathcal{S}_D$ of DG GCs; the
-        grey dashed line marks $\mathcal{S}_D = 1$, above which the output patterns are more distinct than their inputs.
+        gray dashed line marks $\mathcal{S}_D = 1$, above which the output patterns are more distinct than their inputs.
         \textbf{(c)} Mean population activation of the pCA3 cells. \textbf{(d)} Pattern separation degree of the pCA3 cells.
         \textbf{(e)} Population sparsity (Gini index) of the DG GCs and pCA3 cells.}
 
@@ -130,7 +130,7 @@ interneurons across both the DG and CA3.
     \caption{Circuit-wide response to direct iGC activation. PSTHs of the population firing rate for each cell type, expressed as
         a z-score relative to a pre-pulse baseline (Equation~\ref{eq:psth_z}) and aligned to the onset of the
         \SI{5}{\milli\second} depolarizing current injected into half of the iGCs. The shaded band marks the pulse, in green for
-        the directly stimulated iGCs and in grey for every other population. Bins are \SI{1.5}{\milli\second}
+        the directly stimulated iGCs and in gray for every other population. Bins are \SI{1.5}{\milli\second}
         wide and span \SIrange{-60}{60}{\milli\second} relative to the pulse; data are pooled over all EC$\to$iGC excitability
         variants and all trials. Vertical scales differ across panels. The directly driven iGCs (top) dominate during the pulse;
         downstream, the MCs, BCs and iCA3 cells show strong excitation, the pCA3 cells and HIPPs a weaker inhibition, and the mGCs
