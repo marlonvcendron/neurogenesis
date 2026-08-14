@@ -496,10 +496,10 @@ and $B^{(l)}$, with $l \in \{in, out\}$ for input and output, the pattern distan
 
 \begin{equation}
     \label{eq:dp}
-    D_p^{(l)} = \frac{O^{(l)}}{D_a^{(l)}}
+    D_p^{(l)} = \frac{\mathcal{O}^{(l)}}{D_a^{(l)}}
 \end{equation}
 
-where $O^{(l)}$ is the orthogonalization degree  and $D_a^{(l)}$ the mean activation of the pair, itself the arithmetic mean of
+where $\mathcal{O}^{(l)}$ is the orthogonalization degree  and $D_a^{(l)}$ the mean activation of the pair, itself the arithmetic mean of
 the activation degrees of $A^{(l)}$ and $B^{(l)}$:
 
 \begin{equation}
@@ -507,12 +507,12 @@ the activation degrees of $A^{(l)}$ and $B^{(l)}$:
     D_a^{(l)} = \frac{D_a^{(A^{(l)})} + D_a^{(B^{(l)})}}{2}
 \end{equation}
 
-the activation degree of a pattern being its fraction of active neurons. The orthogonalization $O^{(l)}$, which gauges the
+the activation degree of a pattern being its fraction of active neurons. The orthogonalization $\mathcal{O}^{(l)}$, which gauges the
 dissimilarity between the patterns, follows from the Pearson correlation coefficient $\rho^{(l)}$:
 
 \begin{equation}
     \label{eq:o}
-    O^{(l)} = \frac{1 - \rho^{(l)}}{2}
+    \mathcal{O}^{(l)} = \frac{1 - \rho^{(l)}}{2}
 \end{equation}
 
 Writing $\{a_i^{(l)}\}$ and $\{b_i^{(l)}\}$ ($i=1, \dots, N_l$) for the binary states of the $i$-th cell in $A^{(l)}$ and
@@ -525,7 +525,7 @@ $B^{(l)}$ ($l \in \{in, out\}$), this coefficient is:
 
 with $\Delta a_i^{(l)} = a_i^{(l)} - \langle a^{(l)} \rangle$, $\Delta b_i^{(l)} = b_i^{(l)} - \langle b^{(l)} \rangle$ and
 $\langle y \rangle$ the mean over a whole population $y$. Since $\rho^{(l)}$ ranges over $[-1, 1]$, the orthogonalization
-$O^{(l)}$ ranges over $[0, 1]$ (Equation~\ref{eq:o}).
+$\mathcal{O}^{(l)}$ ranges over $[0, 1]$ (Equation~\ref{eq:o}).
 
 From the input ($D_p^{(in)}$) and output ($D_p^{(out)}$) distances, the degree of pattern separation $\mathcal{S}_D$ is taken as
 their ratio:

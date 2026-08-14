@@ -303,10 +303,10 @@ respectivamente), a distância entre os padrões $D_p^{(l)}$ é definida como:
 
 \begin{equation}
     \label{eq:dp}
-    D_p^{(l)} = \frac{O^{(l)}}{D_a^{(l)}}
+    D_p^{(l)} = \frac{\mathcal{O}^{(l)}}{D_a^{(l)}}
 \end{equation}
 
-Nesta equação, $O^{(l)}$ representa o grau de ortogonalização e $D_a^{(l)}$ o grau médio de ativação dos dois padrões. O grau médio de ativação $D_a^{(l)}$ é a média aritmética dos graus de ativação de cada padrão, $A^{(l)}$ e $B^{(l)}$:
+Nesta equação, $\mathcal{O}^{(l)}$ representa o grau de ortogonalização e $D_a^{(l)}$ o grau médio de ativação dos dois padrões. O grau médio de ativação $D_a^{(l)}$ é a média aritmética dos graus de ativação de cada padrão, $A^{(l)}$ e $B^{(l)}$:
 
 \begin{equation}
     \label{eq:da}
@@ -314,11 +314,11 @@ Nesta equação, $O^{(l)}$ representa o grau de ortogonalização e $D_a^{(l)}$ 
 \end{equation}
 
 O grau de ativação de um padrão individual é a fração de neurônios ativos (representados por 1 em uma codificação binária) no padrão.
-O grau de ortogonalização $O^{(l)}$, que mede a dissimilaridade entre os padrões, é calculado a partir do coeficiente de correlação de Pearson, $\rho^{(l)}$:
+O grau de ortogonalização $\mathcal{O}^{(l)}$, que mede a dissimilaridade entre os padrões, é calculado a partir do coeficiente de correlação de Pearson, $\rho^{(l)}$:
 
 \begin{equation}
     \label{eq:o}
-    O^{(l)} = \frac{1 - \rho^{(l)}}{2}
+    \mathcal{O}^{(l)} = \frac{1 - \rho^{(l)}}{2}
 \end{equation}
 
 Onde $\rho^{(l)}$ é o coeficiente de correlação de Pearson entre os padrões $A^{(l)}$ e $B^{(l)}$.
@@ -331,7 +331,7 @@ Considerando $\{a_i^{(l)}\}$ e $\{b_i^{(l)}\}$ ($i=1, \dots, N_l$) como as repre
 
 em que $\Delta a_i^{(l)} = a_i^{(l)} - \langle a^{(l)} \rangle$ e $\Delta b_i^{(l)} = b_i^{(l)} - \langle b^{(l)} \rangle$. A
 notação $\langle \dots \rangle$ indica a média populacional sobre todas as células. O valor de $\rho^{(l)}$ varia entre -1 e 1,
-portanto, $O^{(l)}$ varia entre 0 e 1 (Equação~\ref{eq:o}).
+portanto, $\mathcal{O}^{(l)}$ varia entre 0 e 1 (Equação~\ref{eq:o}).
 
 A partir das distâncias dos padrões de entrada ($D_p^{(in)}$) e saída ($D_p^{(out)}$), o grau de separação de padrões, $\mathcal{S}_D$, é calculado como a razão entre elas:
 

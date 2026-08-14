@@ -268,10 +268,10 @@ $D_p^{(l)}$ is defined as:
 
 \begin{equation}
     \label{eq:dp}
-    D_p^{(l)} = \frac{O^{(l)}}{D_a^{(l)}}
+    D_p^{(l)} = \frac{\mathcal{O}^{(l)}}{D_a^{(l)}}
 \end{equation}
 
-In this equation, $O^{(l)}$ represents the degree of orthogonalization and $D_a^{(l)}$ the mean degree of activation of the
+In this equation, $\mathcal{O}^{(l)}$ represents the degree of orthogonalization and $D_a^{(l)}$ the mean degree of activation of the
 two patterns. The mean degree of activation $D_a^{(l)}$ is the arithmetic mean of the degrees of activation of each pattern,
 $A^{(l)}$ and $B^{(l)}$:
 
@@ -281,12 +281,12 @@ $A^{(l)}$ and $B^{(l)}$:
 \end{equation}
 
 The degree of activation of an individual pattern is the fraction of active neurons (represented by 1 in a binary encoding) in
-the pattern. The orthogonalization degree $O^{(l)}$, which measures the dissimilarity between patterns, is calculated from the
+the pattern. The orthogonalization degree $\mathcal{O}^{(l)}$, which measures the dissimilarity between patterns, is calculated from the
 Pearson correlation coefficient, $\rho^{(l)}$:
 
 \begin{equation}
     \label{eq:o}
-    O^{(l)} = \frac{1 - \rho^{(l)}}{2}
+    \mathcal{O}^{(l)} = \frac{1 - \rho^{(l)}}{2}
 \end{equation}
 
 Where $\rho^{(l)}$ is the Pearson correlation coefficient between patterns $A^{(l)}$ and $B^{(l)}$.
@@ -300,7 +300,7 @@ $i$-th cell in patterns $A^{(l)}$ and $B^{(l)}$ ($l \in \{in, out\}$), the Pears
 
 where $\Delta a_i^{(l)} = a_i^{(l)} - \langle a^{(l)} \rangle$ and $\Delta b_i^{(l)} = b_i^{(l)} - \langle b^{(l)} \rangle$.
 The notation $\langle \dots \rangle$ indicates the population mean over all cells. The value of $\rho^{(l)}$ varies between
--1 and 1, therefore $O^{(l)}$ varies between 0 and 1 (Equation~\ref{eq:o}).
+-1 and 1, therefore $\mathcal{O}^{(l)}$ varies between 0 and 1 (Equation~\ref{eq:o}).
 
 From the input ($D_p^{(in)}$) and output ($D_p^{(out)}$) pattern distances, the degree of pattern separation,
 $\mathcal{S}_D$, is calculated as the ratio between them:

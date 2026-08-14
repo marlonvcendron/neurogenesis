@@ -126,7 +126,7 @@ def plot(stats, ct='mgc'):
   ax.spines['right'].set_visible(False)
   ax.spines['top'].set_visible(False)
   ax.set_xlabel(igc_connectivity_label)
-  ax.set_ylabel('Orthogonalization degree ($\\mathcal{O}_D$)')
+  ax.set_ylabel('Orthogonalization ratio ($\\mathcal{O}^{(out)}/\\mathcal{O}^{(in)}$)')
   ax.set_xticks(range(10, 101, 10))
   ax.set_xticklabels([10, '', '', 40, '', '', 70, '', '', 100])
   ax.legend(loc='upper left', bbox_to_anchor=(0, 1), frameon=False)
