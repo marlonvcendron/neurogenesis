@@ -12,6 +12,8 @@ from utils.args_config import args
 
 NEG = False
 ALL_LEVELS = True # Joins all the runs into one plot
+# SIM_STEP = 25
+SIM_STEP = 10
 
 # RUN_NAME = 'final_opto_negative' if NEG else 'final_opto_positive'
 # RUN_NAME = 'FINAL_opto_june_positive'
@@ -23,6 +25,8 @@ BREAK_TIME_MS = 300.0
 
 PRE_MS  = 25 if NEG else 60
 POST_MS = 95 if NEG else 60
+
+LABEL_PAD_PT = 8
 
 CELL_TYPES = [
     ('igc',  'iGC'),
@@ -54,8 +58,9 @@ def load_data(group_file_path):
     spike_times = {}
     n_neurons   = {'bc': args.n_bc, 'hipp': args.n_hipp, 'ica3': args.n_ica3, 'igc': args.n_igc, 'mc': args.n_mc, 'mgc': args.n_mgc - args.n_igc, 'pca3': args.n_pca3, 'pp': args.n_pp}
 
-    # Take only first file or all
-    files = files if ALL_LEVELS else files[:1]
+    # Take only the first file, or every SIM_STEP-th one across all levels
+    files = files[::SIM_STEP] if ALL_LEVELS else files[:1]
+    print(f'Merging {len(files)} simulations')
     for fpath in files:
         with h5py.File(fpath, 'r') as f:
             if 'spike_times' not in f:
@@ -84,7 +89,7 @@ def main(group_file_path):
     n_panels = len(active)
     fig, axes = plt.subplots(
         n_panels, 1,
-        figsize=(6, 1.8 * n_panels),
+        figsize=(7.5, 1.8 * n_panels),
         dpi=300,
         sharex=True,
     )
@@ -120,8 +125,9 @@ def main(group_file_path):
         ax.set_ylim(0, n_neur)
         ax.set_yticks([0, n_neur])
 
-        ax.set_ylabel(label, color=color, fontsize=16, fontweight='bold', rotation=0, ha='left', va='top')
-        ax.yaxis.set_label_coords(0.04, 1)
+        ax.annotate(label, xy=(0, 0.5), xycoords='axes fraction',
+                    xytext=(-LABEL_PAD_PT, 0), textcoords='offset points',
+                    color=color, fontsize=16, fontweight='bold', ha='right', va='center')
 
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
@@ -131,13 +137,16 @@ def main(group_file_path):
     axes[-1].set_xlabel('Time with respect to iGC current injection (ms)')
     axes[-1].set_xlim(-PRE_MS, POST_MS)
 
-    fig.text(0.05, 0.5, 'Neuron index', va='center', ha='left', rotation='vertical', fontsize=18)
+    fig.text(0.1, 0.5, 'Neuron index', va='center', ha='left', rotation='vertical', fontsize=18)
 
-    plt.tight_layout(rect=[0.06, 0, 1, 1], h_pad=0.4)
+    plt.tight_layout(h_pad=0.4)
+    fig.subplots_adjust(left=0.226)
 
     sign = 'neg' if NEG else 'pos'
     p = re.compile(r".*(\d.\d)")
     neurogenesis_level = 'all' if ALL_LEVELS else p.search(group_file_path).group(1)
+    if ALL_LEVELS and SIM_STEP > 1:
+        neurogenesis_level += f'_every{SIM_STEP}'
     output_path = f'figures/plots/optogenetics/{RUN_NAME}/spikes_{sign}_{neurogenesis_level}.jpg'
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path, dpi=300, bbox_inches='tight', format='jpg')
