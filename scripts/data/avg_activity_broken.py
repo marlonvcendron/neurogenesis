@@ -6,7 +6,7 @@ from scipy.stats import sem
 from utils.patterns import activation_degree
 from utils.data import load_pattern_data
 from utils.plot_styles import (
-    cell_colors, dense_dots, alpha, igc_connectivity_label,
+    cell_colors, dense_dots, alpha, igc_conn_prob_label,
     apply_paper_style, fig_size, panel_label,
 )
 
@@ -91,7 +91,7 @@ def draw(fig, spec, data, groups, label=None):
 
   ax.legend(frameon=False)
 
-  ax2.set_xlabel(igc_connectivity_label)
+  ax2.set_xlabel(igc_conn_prob_label)
   ax2.set_xticks(np.arange(0.1, 1.1, 0.1))
   ax2.set_xticklabels([10, '', '', 40, '', '', 70, '', '', 100])
 

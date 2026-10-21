@@ -218,21 +218,19 @@ Equation~\ref{eq_izhikevich_1}.
 
 The methodology for quantifying pattern separation was based on that used by~\textcite{kimEffect2024}. To analyze pattern
 separation under different levels of input pattern similarity and the impact of adult neurogenesis, 11 different model variants
-were tested: one control without adult neurogenesis ($N_{mGC} = 2000$) and 10 others with neurogenesis at different
-EC$\to$iGC excitability levels ($N_{mGC} = 1900$ and $N_{iGC} = 100$), as illustrated in
-Figure~\ref{fig:diagrama_entrada_saida}. The
-excitability level is expressed as a percentage, where 100\% corresponds to iGCs having the same EC-GC connection probability
-as mGCs; the intent is to simulate the incomplete circuit integration of iGCs, whose dendrites are not yet fully developed.
-Rather than committing to a single value, the whole range from 10\% to 100\% in increments of 10\% was swept, since adult-born
-GCs acquire their entorhinal input gradually as they mature~\parencite{espositoNeuronal2005, aimoneRegulation2014}, so no single
-value represents the immature population. For
-each model, 30 sets of 10 input patterns are generated. Each set consists of one randomly generated original pattern and 9
-patterns similar to it, ranging from 90\% to 10\% similarity. An input pattern consists of a binary vector of size
-$N_{EC} = 400$, representing the activation state of each EC neuron, in which active neurons spike according to a Poisson
-distribution at a frequency of \SI{40}{\hertz}. Every input pattern has exactly 10\% active neurons. To generate patterns with
-different levels of similarity, a random fraction of $X\%$ of the active neurons is kept active, while the remaining
-$(100 - X)\%$ are deactivated and an equal number of initially inactive neurons is activated, to maintain the 10\% activity
-level (40 active neurons).
+were tested: one control without adult neurogenesis ($N_{mGC} = 2000$) and 10 others with neurogenesis at different EC$\to$iGC
+connection probabilities ($N_{mGC} = 1900$ and $N_{iGC} = 100$), as illustrated in Figure~\ref{fig:diagrama_entrada_saida}. The
+EC$\to$iGC connection probability is expressed as a percentage of the EC$\to$mGC one, where 100\% corresponds to iGCs being
+innervated by the EC as densely as mGCs; the intent is to simulate the incomplete circuit integration of iGCs, whose dendrites are
+not yet fully developed. Rather than committing to a single value, the whole range from 10\% to 100\% in increments of 10\% was
+swept, since adult-born GCs acquire their entorhinal input gradually as they mature~\parencite{espositoNeuronal2005,
+aimoneRegulation2014}, so no single value represents the immature population. For each model, 30 sets of 10 input patterns are
+generated. Each set consists of one randomly generated original pattern and 9 patterns similar to it, ranging from 90\% to 10\%
+similarity. An input pattern consists of a binary vector of size $N_{EC} = 400$, representing the activation state of each EC
+neuron, in which active neurons spike according to a Poisson distribution at a frequency of \SI{40}{\hertz}. Every input pattern
+has exactly 10\% active neurons. To generate patterns with different levels of similarity, a random fraction of $X\%$ of the
+active neurons is kept active, while the remaining $(100 - X)\%$ are deactivated and an equal number of initially inactive neurons
+is activated, to maintain the 10\% activity level (40 active neurons).
 
 Each pattern is simulated for \SI{1300}{\milli\second} of simulation time, with the first \SI{300}{\milli\second} discarded
 while the network stabilizes. The output pattern of a neuronal population, whether GCs or pCA3 cells, consists of a
@@ -246,8 +244,8 @@ yields nearly identical results (Pearson $r = 0.99$).}.
     \textbf{(a)} Input patterns are generated in sets of 10 patterns of size $N_{EC} = 400$; the first is generated randomly
     and the remaining ones are generated from it at different levels of similarity by randomly activating and deactivating
     neurons.
-    \textbf{(b)} 11 model variants are simulated: one without neurogenesis and 10 with neurogenesis at different excitability
-    levels, from 100\% down to 10\% excitability.
+    \textbf{(b)} 11 model variants are simulated: one without neurogenesis and 10 with neurogenesis at different EC$\to$iGC
+    connection probabilities, from 100\% down to 10\% of the EC$\to$mGC value.
     \textbf{(c)} Spike trace of EC neurons during a simulation; each generated pattern corresponds to the activation of EC
     neurons, with active neurons spiking at a frequency of \SI{40}{\hertz}; each of the 11 models is exposed to 30 sets of
     10 input patterns, totaling 300 simulations of \SI{1300}{\milli\second} each.
@@ -343,7 +341,8 @@ the standard error of the mean (SEM) reported as the error.
 \textcite{mchughAdultborn2022} showed \textit{in vivo} that briefly activating immature (4--7 weeks) adult-born GCs recruits
 hippocampal interneurons and increases population sparsity in the DG and CA3. To test whether the model reproduces these circuit
 effects, iGCs were activated directly through current injection and the response of every population was measured. The same
-EC$\to$iGC excitability variants as in the pattern-separation experiment were used, each driven by an identical EC input.
+EC$\to$iGC connection probability variants as in the pattern-separation experiment were used, each driven by an identical EC
+input.
 
 In each run, a random half of the iGCs (50 of the 100) received a depolarizing current of \SI{0.5}{\nano\ampere} for
 \SI{5}{\milli\second}, delivered \SI{400}{\milli\second} into the recording window, once network activity had stabilized. This

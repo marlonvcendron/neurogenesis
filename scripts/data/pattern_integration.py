@@ -129,7 +129,7 @@ def in_similarity():
       cmap_index += 1
       alpha = 0.9
 
-    label = 'Control' if 'control' in group else f'Neurogenesis: {int(float(group.split("_")[1])*100)}% connectivity'
+    label = 'Control' if 'control' in group else f'Neurogenesis: EC→iGC {int(float(group.split("_")[1])*100)}% of mGC'
     label = label if not group in groups_to_skip else None
     plt.plot(in_sim, id, color=color, alpha=alpha, label=label)
 

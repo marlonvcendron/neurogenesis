@@ -4,7 +4,7 @@ from scipy.stats import sem, linregress
 
 from utils.patterns import orthogonalization_degree, correlation_degree, average_activation_degree
 from utils.data import load_pattern_data
-from utils.plot_styles import cell_colors, alpha, igc_connectivity_label, apply_paper_style, fig_size
+from utils.plot_styles import cell_colors, alpha, igc_conn_prob_label, apply_paper_style, fig_size
 
 apply_paper_style()
 np.random.seed(0)
@@ -103,11 +103,11 @@ def report(stats):
                           ('log decorr', lambda s: s['logO'][0]),
                           ('null O_out', lambda s: s['null'])]:
       sl, r2, p = _trend(stats[ct], getter)
-      print(f'  trend {label:12s} vs excitability: slope={sl:+.5f}  R2={r2:.3f}  p={p:.1e}')
+      print(f'  trend {label:12s} vs connection probability: slope={sl:+.5f}  R2={r2:.3f}  p={p:.1e}')
 
 
 def plot(stats, ct='mgc'):
-  """Plot just the orthogonalisation degree (O_out / O_in) of the mGCs vs iGC excitability."""
+  """Plot the orthogonalisation degree (O_out / O_in) of the mGCs vs the EC→iGC connection probability."""
   ng = [g for g in groups[1:] if g in stats[ct]]
   x = [float(g.split('_')[1]) * 100 for g in ng]
 
@@ -125,7 +125,7 @@ def plot(stats, ct='mgc'):
 
   ax.spines['right'].set_visible(False)
   ax.spines['top'].set_visible(False)
-  ax.set_xlabel(igc_connectivity_label)
+  ax.set_xlabel(igc_conn_prob_label)
   ax.set_ylabel('Orthogonalization ratio ($\\mathcal{O}^{(out)}/\\mathcal{O}^{(in)}$)')
   ax.set_xticks(range(10, 101, 10))
   ax.set_xticklabels([10, '', '', 40, '', '', 70, '', '', 100])

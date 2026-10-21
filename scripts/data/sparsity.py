@@ -6,7 +6,7 @@ from scipy.stats import sem
 
 from utils.data import load_pattern_data
 from utils.plot_styles import (
-    cell_colors, igc_connectivity_label, apply_paper_style, fig_size, panel_label,
+    cell_colors, igc_conn_prob_label, apply_paper_style, fig_size, panel_label,
 )
 from utils.sparsity import gini_index, hoyer
 
@@ -122,7 +122,7 @@ def draw(fig, spec, data, groups, measure='gini', label=None):
     host.set_yticks([])
     host.set_ylabel(ylabel, labelpad=42, y=0.54)
 
-    axes[-1].set_xlabel(igc_connectivity_label)
+    axes[-1].set_xlabel(igc_conn_prob_label)
 
     if ctrl_line is not None:
         axes[0].legend([ctrl_line], ['Control'], loc='lower right', frameon=False)

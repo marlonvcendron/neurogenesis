@@ -120,7 +120,7 @@ def generate_synapse_table():
                     the same lamella; cross-lamellar connections occur between cells of one lamella and  
                     all others. The connection probability $P$ refers to the percentage of connections
                     between neuronal populations according to the connection condition.
-                    * iGCs were simulated with multiple different EC$\\to$iGC excitability levels.}''', file=f)
+                    * iGCs were simulated with multiple different EC$\\to$iGC connection probabilities.}''', file=f)
         print("\\label{tab:synapse_params}", file=f)
         print("\\end{table*}", file=f)
 

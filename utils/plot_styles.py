@@ -38,9 +38,7 @@ def panel_label(ax, text, x=-0.16, y=1.04, size=22):
             fontweight='bold', va='bottom', ha='right')
 
 
-igc_connectivity_label = 'EC→iGC excitability (% of mGC)'
-# igc_connectivity_label = 'iGC afferent input fraction'
-# igc_connectivity_label = 'EC→iGC connectivity (% of mGC)'
+igc_conn_prob_label = 'EC→iGC connection probability\n(% of mGC)'
 
 # From https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html
 dense_dots = (0, (1, 0.5))

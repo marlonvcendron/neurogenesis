@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import sem, linregress
 
 from utils.data import load_pattern_data
-from utils.plot_styles import cell_colors, dense_dots, alpha, linewidth, igc_connectivity_label
+from utils.plot_styles import cell_colors, dense_dots, alpha, linewidth, igc_conn_prob_label
 
 plt.style.use('seaborn-v0_8-poster')
 plt.rcParams.update({
@@ -92,7 +92,7 @@ def plot():
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
-    ax.set_xlabel(igc_connectivity_label)
+    ax.set_xlabel(igc_conn_prob_label)
     ax.set_ylabel('Cosine distance ($d_{cos}$)')
     ax.set_xticks(range(10, 101, 10))
     ax.legend(loc='upper left', bbox_to_anchor=(0, 1.15), frameon=False)

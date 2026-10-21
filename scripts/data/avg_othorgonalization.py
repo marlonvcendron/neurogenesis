@@ -9,7 +9,7 @@ from matplotlib.lines import Line2D
 
 from utils.patterns import orthogonalization_degree
 from utils.data import load_pattern_data
-from utils.plot_styles import cell_colors, dense_dots, alpha, linewidth, igc_connectivity_label
+from utils.plot_styles import cell_colors, dense_dots, alpha, linewidth, igc_conn_prob_label
 
 plt.style.use('seaborn-v0_8-poster')
 plt.rcParams.update({
@@ -188,7 +188,7 @@ def in_similarity():
   ax.spines['top'].set_visible(False)
 
   # plt.title('Average pattern separation degree ($\\mathcal{S}_D$) by group and population')
-  plt.xlabel(igc_connectivity_label)
+  plt.xlabel(igc_conn_prob_label)
   plt.ylabel('Othorgonalization degree ($\\mathcal{O}_D$)')
   # plt.axhline(y=1, color='gray', linestyle='--')
 

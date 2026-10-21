@@ -6,7 +6,7 @@ from scipy.stats import sem
 from utils.patterns import activation_degree
 from utils.data import load_pattern_data
 from utils.plot_styles import (
-    cell_colors, alpha, igc_connectivity_label,
+    cell_colors, alpha, igc_conn_prob_label,
     apply_paper_style, fig_size, panel_label,
 )
 
@@ -53,7 +53,7 @@ def draw(fig, spec, data, groups, label=None):
   ax.legend(frameon=False)
 
   ax.set_ylabel('Mean population activation (%)')
-  ax.set_xlabel(igc_connectivity_label)
+  ax.set_xlabel(igc_conn_prob_label)
   ax.set_xticks(range(len(ng_groups)))
   ax.set_xticklabels([10, '', '', 40, '', '', 70, '', '', 100])
 

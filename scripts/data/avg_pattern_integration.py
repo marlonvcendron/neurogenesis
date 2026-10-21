@@ -7,7 +7,7 @@ from matplotlib.colors import LinearSegmentedColormap
 
 from utils.patterns import pattern_separation_degree, activation_degree, correlation_degree, pattern_integration_degree
 from utils.data import load_pattern_data
-from utils.plot_styles import cell_colors, dense_dots, alpha
+from utils.plot_styles import cell_colors, dense_dots, alpha, igc_conn_prob_label
 
 plt.style.use('seaborn-v0_8-poster')
 plt.rcParams.update({
@@ -194,7 +194,7 @@ def in_similarity():
 
   plt.ylabel('')
   plt.title('')
-  plt.xlabel('Neurogenesis models with X% connectivity fraction')
+  plt.xlabel(igc_conn_prob_label)
 
   xlabels = range(10, 101, 10)
   plt.xticks(ticks=range(len(xlabels)), labels=xlabels)

@@ -7,7 +7,7 @@ from matplotlib.colors import LinearSegmentedColormap
 
 from utils.patterns import activation_degree
 from utils.data import load_pattern_data
-from utils.plot_styles import cell_colors, alpha
+from utils.plot_styles import cell_colors, alpha, igc_conn_prob_label
 
 plt.style.use('seaborn-v0_8-poster')
 plt.rcParams.update({
@@ -192,7 +192,7 @@ def in_similarity():
   sm.set_array([])
 
   plt.ylabel('Mean population activation (%)')
-  plt.xlabel('Connectivity (%)')
+  plt.xlabel(igc_conn_prob_label)
 
   xlabels = range(10, 101, 10)
   # xlabels = range(10, 31, 10)

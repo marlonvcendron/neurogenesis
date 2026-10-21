@@ -136,7 +136,7 @@ def in_similarity():
         # alpha = 0.1
         alpha = 0
 
-    label = 'Control' if 'control' in group else f'Neurogenesis: {int(float(group.split("_")[1])*100)}% excitability'
+    label = 'Control' if 'control' in group else f'Neurogenesis: EC→iGC {int(float(group.split("_")[1])*100)}% of mGC'
     label = label if not group in groups_to_skip else None
     plt.plot(in_sim, sd, color=color, alpha=alpha, label=label, linestyle=linestyle)
 
@@ -159,8 +159,8 @@ def in_similarity():
 
   # legend_elements = [
   #     Line2D([0], [0], color=c_color, marker='o'),
-  #     Line2D([0], [0], label='Neurogenesis: 10% connectivity', marker='X', color=cmap(0)),
-  #     Line2D([0], [0], label='Neurogenesis: 100% connectivity', marker='X', color=cmap(1.0)),
+  #     Line2D([0], [0], label='Neurogenesis: EC→iGC 10% of mGC', marker='X', color=cmap(0)),
+  #     Line2D([0], [0], label='Neurogenesis: EC→iGC 100% of mGC', marker='X', color=cmap(1.0)),
   # ]
   # plt.legend(handles=legend_elements, loc='upper left')
 

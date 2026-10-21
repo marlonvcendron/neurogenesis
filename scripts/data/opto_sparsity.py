@@ -114,7 +114,7 @@ def main(group_file_path):
 
     base_name = os.path.basename(group_file_path)
     try:
-        title = f'{int(round(float(base_name.split("_")[1]) * 100))}% excitability'
+        title = f'EC→iGC {int(round(float(base_name.split("_")[1]) * 100))}% of mGC'
     except (IndexError, ValueError):
         title = base_name
 

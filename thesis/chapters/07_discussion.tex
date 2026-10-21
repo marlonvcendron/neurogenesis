@@ -14,28 +14,28 @@ separation degree rises with neurogenesis and the gain in mGC separation is larg
 reaches CA3.
 
 The gain in mGC separation follows from a redistribution of activity within the GC population. Increasing the EC$\to$iGC
-connectivity raises the iGC activation, and the iGCs drive the BCs and the HIPPs both directly and through the MCs; the resulting
-inhibition lowers the mGC activation, and the sparser mGC output raises its separation degree. Since the total GC activation stays
-close to the control value at every connectivity level, the DG does not become less active, and the activity given up by the mGCs
-is taken up by the iGCs. The separation degree measured over the whole GC population moves in the opposite direction for the same
-reason: the iGCs are few and are active for a large share of the patterns, so they are shared between patterns, and pooling them
-with the mGCs adds correlation to the output. That decline is accounted for almost entirely by the loss of decorrelation, the
-activation term showing no trend across connectivity levels.\ \textcite{kimEffect2024} varied the same quantity and found two
-states divided by a threshold, the separation degree falling below that of a network without iGCs at low synaptic maturity, where
-the reduced innervation of the iGCs lowers their activation enough to withdraw inhibition from the mGCs. No such state appears
-here, the mGC separation degree staying above the control at every level. The difference is consistent with how the two models
-reduce the input to the iGCs:~\textcite{kimEffect2024} scale the connection probability from the EC and the MCs together, whereas
-here only the EC$\to$iGC probability is scaled and the MC$\to$iGC projection is left intact, so the iGCs retain enough excitatory
-drive to engage the BCs and the HIPPs even at the lowest EC$\to$iGC connectivity.
+connection probability raises the iGC activation, and the iGCs drive the BCs and the HIPPs both directly and through the MCs; the
+resulting inhibition lowers the mGC activation, and the sparser mGC output raises its separation degree. Since the total GC
+activation stays close to the control value at every connection probability, the DG does not become less active, and the activity
+given up by the mGCs is taken up by the iGCs. The separation degree measured over the whole GC population moves in the opposite
+direction for the same reason: the iGCs are few and are active for a large share of the patterns, so they are shared between
+patterns, and pooling them with the mGCs adds correlation to the output. That decline is accounted for almost entirely by the loss
+of decorrelation, the activation term showing no trend across connection probabilities.\ \textcite{kimEffect2024} varied the same
+quantity and found two states divided by a threshold, the separation degree falling below that of a network without iGCs at low
+synaptic maturity, where the reduced innervation of the iGCs lowers their activation enough to withdraw inhibition from the mGCs.
+No such state appears here, the mGC separation degree staying above the control at every level. The difference is consistent with
+how the two models reduce the input to the iGCs:~\textcite{kimEffect2024} scale the connection probability from the EC and the MCs
+together, whereas here only the EC$\to$iGC probability is scaled and the MC$\to$iGC projection is left intact, so the iGCs retain
+enough excitatory drive to engage the BCs and the HIPPs even at the lowest EC$\to$iGC connection probability.
 
 The pCA3 separation degree rises with neurogenesis but stays below one. Of the two factors combined in Equation~\ref{eq:dp}, it is
 the activation term that holds it there: the pCA3 population is active at 24\% to 30\% against the 10\% of the input patterns, and
 the measure returns values below one for any code denser than its input, whichever way the correlations move. Measured against the
 GC output that drives it rather than against the EC input, the pCA3 code is the more correlated of the two at low EC$\to$iGC
-excitability and the less correlated at high ones, its own output correlation staying between $0.22$ and $0.28$ while that of the
-GC patterns rises from $0.14$ to $0.55$. The balance between the two factors also differs from the one found in the DG, the rise
-in the pCA3 separation degree being divided roughly two to one between the fall in activation and the gain in orthogonalization,
-against a much larger share for activation in the mGCs.
+connection probabilities and the less correlated at high ones, its own output correlation staying between $0.22$ and $0.28$ while
+that of the GC patterns rises from $0.14$ to $0.55$. The balance between the two factors also differs from the one found in the
+DG, the rise in the pCA3 separation degree being divided roughly two to one between the fall in activation and the gain in
+orthogonalization, against a much larger share for activation in the mGCs.
 
 In agreement with~\textcite{mchughAdultborn2022}, activating the iGCs recruited inhibitory interneurons in both the DG and CA3,
 the circuit counterpart of the increased GC population sparsity of Section~\ref{sec:res_sparsity}. This recruitment was not a
@@ -67,18 +67,18 @@ interneuron types have been distinguished in the DG~\parencite{degroInterneuron2
 
 The size of the effect produced by the pulse depends on how much the iGCs already contribute at baseline. The same current is
 delivered to the same number of iGCs at every level and adds a roughly constant increment to the iGC population rate, while the
-baseline iGC rate rises about elevenfold across the connectivity range, so the pulse raises that rate some thirtyfold at the
-lowest connectivity and about fourfold at the highest. The gain in GC population sparsity produced by the pulse falls over the
-same range (Figure~\ref{fig:opto_sparsity}). The sparsification that follows a brief activation of adult-born GCs would therefore be
-expected to depend on how far the activated cells have integrated into the circuit, and to be largest for the least mature of
-them.
+baseline iGC rate rises about elevenfold across the range of connection probabilities, so the pulse raises that rate some
+thirtyfold at the lowest connection probability and about fourfold at the highest. The gain in GC population sparsity produced by
+the pulse falls over the same range (Figure~\ref{fig:opto_sparsity}). The sparsification that follows a brief activation of
+adult-born GCs would therefore be expected to depend on how far the activated cells have integrated into the circuit, and to be
+largest for the least mature of them.
 
 Several simplifications limit these results. Each neuron is reduced to a single compartment, so the dendritic processing that
 controls GC sparsity and separation~\parencite{chavlisDendrites2017}, and that varies across GC
 subtypes~\parencite{maoExcitatory2025}, is not represented. The interneuron diversity is minimal, with a single BC and HIPP type
 in the DG and one inhibitory type in CA3~\parencite{kopsickFormation2024}, a likely source of the unexplained mGC response. The
-iGCs are represented as a single static population, so the sweep over EC$\to$iGC connectivity samples the maturation range rather
-than following cells through it.
+iGCs are represented as a single static population, so the sweep over the EC$\to$iGC connection probability samples the maturation
+range rather than following cells through it.
 
 The effects on CA3 require further investigation. Because its synapses are held fixed here, the model cannot address how adult
 neurogenesis affects storage and recall in the recurrent CA3 network; introducing synaptic plasticity would allow this to be

@@ -166,7 +166,7 @@ def in_similarity():
       if group in groups_to_skip:
         alpha = 0
 
-    label = 'Control' if 'control' in group else f'Neurogenesis: {int(float(group.split("_")[1])*100)}% excitability'
+    label = 'Control' if 'control' in group else f'Neurogenesis: EC→iGC {int(float(group.split("_")[1])*100)}% of mGC'
     label = label if not group in groups_to_skip else None
     plt.plot(in_sim, sd, color=color, alpha=alpha, label=label, linestyle=linestyle)
 
